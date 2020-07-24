@@ -1,0 +1,55 @@
+/* Colors: 
+    Background: #FFFFFB
+    Primary:    #5B5F97
+    Secondary:  #FFC145
+    Accent:     #B8B8D1
+
+*/
+
+/* Main background */
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#title {
+  font-weight: bold;
+}
+
+#main {
+  width: 2000px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.description {
+  width: 600px;
+}
+#input {
+  width: 600px;
+}
+
+.child {
+  margin: 50px;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Text Typing Animation */
+.typewrite {
+  color: black;
+  transition: opacity 1000ms ease-in-out;
+  font-size: 48px;
+}
+
+#wrap {
+  border-right: 0.08em solid black;
+  transition: border-right 1000ms ease-out;
+}
