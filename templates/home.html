@@ -14,7 +14,7 @@
     ></h2>
   </div>
   <div id="container">
-    <div class="item">
+    
       <div class="child">
          <h1>
             Machine Learning Architecture
@@ -25,7 +25,7 @@
             the most important features in an image for prediction through a
             series of Convolutional and Max Pooling layers. The result of these
             layers is a one dimensional layer that is passed to a series of
-            dense layers to predict which class the image belongs to.
+            dense layers to predict which class the image belongs to. The machine learning model is trained on Optical Coherence Tomography (OCT) images trained to detect three different eye diseases: CNV, DME, and Drusen.
           </p>
           <!-- <div id="evalution_container">
           <img src="{{ url_for('static', filename='model_accuracy_png.png')}}" width="200"height="200"  />
@@ -80,43 +80,62 @@
               <input type="submit" />
             </form>
           </div>
+        
+      
+      
+        <div class="child">
+          <div class="slider">
+  
+            <a href="#slide-1">CNV</a>
+            <a href="#slide-2">DME</a>
+            <a href="#slide-3">DRU</a>
+            <a href="#slide-4">NORM</a>
+          
+            <div class="slides">
+              <div id="slide-1">
+                <img
+                src="{{ url_for('static', filename='images/cnv.png')}}"
+                alt="Choroidal Neovascularization"
+                class="slides_image"
+              />
+              </div>
+              <div id="slide-2">
+                <img
+                src="{{ url_for('static', filename='images/dme.jpeg')}}"
+                alt="Diabetic Macular Edema"
+                class="slides_image"
+              />
+              </div>
+              <div id="slide-3">
+                <img
+                src="{{ url_for('static', filename='images/drusen.jpeg')}}"
+                alt="Drusen"
+                class="slides_image"
+              />
+              </div>
+              <div id="slide-4">
+                <img
+                src="{{ url_for('static', filename='images/normal.jpeg')}}"
+                alt="Normal Eye"
+                class="slides_image"
+              />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="item">
         <div class="child">
           <h3>Conditions</h3>
-          <p class="description">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit velit
-            sequi consequatur ullam, error delectus fugiat quos mollitia
-            voluptatum in non quis fugit impedit, laudantium id iusto nesciunt
-            totam, iure quia reprehenderit. Obcaecati nemo mollitia vero
-            repellendus quae doloribus rerum nostrum sint ullam repellat quis
-            culpa consequuntur nihil accusamus ex unde ratione modi quod
-            veritatis in voluptate, incidunt eius! Quibusdam neque mollitia
-            quisquam reiciendis cumque nesciunt dolor, soluta repellendus
-            maiores ipsam laboriosam beatae odit accusantium atque explicabo ab
-            eaque voluptates distinctio eum dicta veritatis voluptate. Totam
-            culpa fuga corrupti, veniam cumque quis harum hic soluta sed, nemo
-            adipisci maxime dolor.
-          </p>
+          <div class="description">
+            <h3><strong>Choroidal Neovascularization (CNV):</strong></h3>
+            <div style="margin-left: 8ch;"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum consectetur quas quo at nesciunt fuga, voluptatem soluta officiis omnis aperiamenim! Odit, illum quo.</p></div>
+            <h3><strong>Diabetic Macular Edema (DME):</strong></h3>
+            <div style="margin-left: 8ch;"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum consectetur quas quo at nesciunt fuga, voluptatem soluta officiis omnis aperiamenim! Odit, illum quo.</p></div>
+            <h3><strong>Drusen (DRU):</strong></h3>
+            <div style="margin-left: 8ch;"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum consectetur quas quo at nesciunt fuga, voluptatem soluta officiis omnis aperiamlaudantium in enim! Odit, illum quo.</p></div>
+          </div>
         </div>
-        <div class="child">
-          <p class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            facere ab excepturi nulla ratione, magnam sapiente, consequatur ut
-            debitis incidunt beatae odio assumenda magni ipsam ducimus nobis
-            enim illum iure deleniti. Impedit hic est nesciunt corporis
-            asperiores in sapiente commodi velit, eaque provident cum doloremque
-            optio, tempore ipsam ducimus. Nostrum quisquam iusto placeat laborum
-            inventore minus quis deleniti veritatis quam sint et recusandae,
-            expedita nobis at alias natus dicta officiis ipsa labore esse
-            tempore assumenda? Fugit atque incidunt alias. Itaque, tempore eaque
-            consequatur suscipit aliquid non molestias earum neque
-            exercitationem iste quam nulla voluptas blanditiis cupiditate maxime
-            inventore distinctio sint!
-          </p>
-        </div>
-      </div>
+      
+    </div>
 
       <script src="{{ url_for('static', filename='Chart.js')}}"></script>
       <script>
@@ -131,7 +150,7 @@
         var myChart = new Chart(ctx, {
           type: "bar",
           data: {
-            labels: ["CNV", "DME", "DRUSEN", "NORMAL"],
+            labels: ["CNV", "DME", "DRU", "NORMAL"],
             datasets: [
               {
                 data: [
