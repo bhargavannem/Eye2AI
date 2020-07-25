@@ -8,48 +8,74 @@
 
 /* Main background */
 
-h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+p {
+        font-size: 21px;
+        
+        margin: 0 !important;
 }
 
 #title {
-  font-weight: bold;
+        font-weight: bold;
+        margin: 50px;
 }
 
+#title_container {
+        margin: 50px;
+        height: 100px;
+}
+
+#writer_container {
+        display: flex;
+        justify-content: center;
+}
 #main {
-  width: 2000px;
+        width: 1400px;
+        font-family: "Monaco", "Menlo", "Ubuntu Mono", "Consolas",
+                "source-code-pro", monospace;
 }
 
 #container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+}
+
+#myCarousel {
+        width: 500px;
+        margin: 10px;
 }
 .description {
-  width: 600px;
+        width: 500px;
+        text-align: justify;
 }
 #input {
-  width: 600px;
+        width: 600px;
 }
 
 .child {
-  margin: 50px;
+        margin: 50px;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
 }
 .item {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
 }
 /* Text Typing Animation */
 .typewrite {
-  color: black;
-  transition: opacity 1000ms ease-in-out;
-  font-size: 48px;
+        color: black;
+        transition: opacity 1000ms ease-in-out;
+        font-size: 48px;
 }
 
 #wrap {
-  border-right: 0.08em solid black;
-  transition: border-right 1000ms ease-out;
+        border-right: 0.08em solid black;
+        transition: border-right 1000ms ease-out;
 }

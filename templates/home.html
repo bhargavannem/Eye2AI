@@ -3,39 +3,85 @@
 
 {% endblock %} {% block content %}
 <div id="main">
-  <h1 id="title">EYE2AI</h1>
-  <h2
-    href=""
-    class="typewrite"
-    id="writer_container"
-    data-period="2000"
-    data-type='[ "hi im bhargav.", "solutions with machine learning.", "powered by tensorflow.", "i love to develop." ]'
-  ></h2>
-
+  <div id="title_container">
+    <h1 id="title">EYE2AI</h1>
+    <h2
+      href=""
+      class="typewrite"
+      id="writer_container"
+      data-period="2000"
+      data-type='[ "hi im bhargav.", "solutions with machine learning.", "powered by tensorflow.", "i love to develop." ]'
+    ></h2>
+  </div>
   <div id="container">
     <div class="item">
       <div class="child">
-        <h1>
-          How it Works
-        </h1>
-        <p class="description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore,
-          sit placeat harum dolorem temporibus aperiam veritatis libero nisi
-          delectus aspernatur necessitatibus consequuntur ut? Ullam aspernatur
-          veniam possimus inventore error maxime hic, odio aliquam tempore nam
-          officia quisquam iste ut molestiae debitis, sapiente repudiandae nisi.
-          Voluptas quaerat perferendis sequi repellat?
-        </p>
+         <h1>
+            Machine Learning Architecture
+          </h1>
+          <p class="description">
+            The machine learning model is based on a Convolutional Neural
+            Network (CNN). CNN's are able to parse through an image and extract
+            the most important features in an image for prediction through a
+            series of Convolutional and Max Pooling layers. The result of these
+            layers is a one dimensional layer that is passed to a series of
+            dense layers to predict which class the image belongs to.
+          </p>
+          <!-- <div id="evalution_container">
+          <img src="{{ url_for('static', filename='model_accuracy_png.png')}}" width="200"height="200"  />
+          <img src="{{ url_for('static', filename='model_loss_png.png')}}" width="200" height="200" />
+        </div> -->
+        
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img
+                  src="{{ url_for('static', filename='model_accuracy_png.png')}}"
+                  alt="Los Angeles"
+                  style="width: 100%;"
+                />
+              </div>
+
+              <div class="item">
+                <img
+                  src="{{ url_for('static', filename='model_loss_png.png')}}"
+                  alt="Chicago"
+                  style="width: 100%;"
+                />
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a
+              class="left carousel-control"
+              href="#myCarousel"
+              data-slide="prev"
+            >
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="right carousel-control"
+              href="#myCarousel"
+              data-slide="next"
+            >
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        
       </div>
-      <div id="input" class="child">
-        <form action="/" method="POST" enctype="multipart/form-data">
-            <label for="image">Select a file:</label>
-            <input type="file" id="image" name="image" /><br /><br />
-            <input type="submit" />
-        </form>
-        <canvas id="myChart" width="600" height="600"></canvas>
+          <div id="input" class="child">
+            <form action="/" method="POST" enctype="multipart/form-data">
+              <label for="image">Select a file:</label>
+              <input type="file" id="image" name="image" /><br /><br />
+              <input type="submit" />
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
       <div class="item">
         <div class="child">
           <h3>Conditions</h3>
@@ -74,49 +120,63 @@
 
       <script src="{{ url_for('static', filename='Chart.js')}}"></script>
       <script>
-        '{% if prediction %}'
-          var ctx = document.getElementById('myChart').getContext('2d');
-          var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['CNV', 'DME', 'DRUSEN', 'NORMAL'],
-        datasets: [{            
-            data: ['{{ cnv }}', '{{ dme }}', '{{ drusen }}', '{{ normal }}'],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+        "{% if prediction %}";
+        // <canvas id="myChart" width="600" height="600"></canvas>
+        var ele = document.createElement("canvas");
+        ele.id = "myChart";
+        ele.width = 500;
+        ele.height = 500;
+        document.getElementById("input").appendChild(ele);
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myChart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: ["CNV", "DME", "DRUSEN", "NORMAL"],
+            datasets: [
+              {
+                data: [
+                  "{{ cnv }}",
+                  "{{ dme }}",
+                  "{{ drusen }}",
+                  "{{ normal }}",
+                ],
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.2)",
+                  "rgba(54, 162, 235, 0.2)",
+                  "rgba(255, 206, 86, 0.2)",
+                  "rgba(75, 192, 192, 0.2)",
+                  "rgba(153, 102, 255, 0.2)",
+                  "rgba(255, 159, 64, 0.2)",
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                  "rgba(153, 102, 255, 1)",
+                  "rgba(255, 159, 64, 1)",
+                ],
+                borderWidth: 1,
+              },
             ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        },
-        legend: {
-            display: false,
-            
-        }
-    }
-});
-          
-        '{% endif %}'
+          },
+          options: {
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+            legend: {
+              display: false,
+            },
+          },
+        });
+
+        "{% endif %}"
         var TxtType = function (el, toRotate, period) {
           this.toRotate = toRotate;
           this.el = el;

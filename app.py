@@ -35,6 +35,7 @@ def home():
                 image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
             print("Image saved...")
             prd = predict(filename)
+            os.remove(os.path.join(app.config["IMAGE_UPLOADS"],filename))
             return render_template('home.html',cnv=prd[0], dme=prd[1], drusen=prd[2], normal=prd[3], prediction=True)
     else:
         return render_template('home.html')
