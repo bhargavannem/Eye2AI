@@ -21,7 +21,7 @@ from tensorflow.keras.preprocessing.image import load_img
 from keras.preprocessing import image
 
 def predict(filename):
-        md = tf.keras.models.load_model('static/model_0.93')
+        md = tf.keras.models.load_model('static/my_model.h5')
         image_dims = 160
         DIR = os.path.join('static/uploads', filename)
         test_image = load_img(DIR,target_size=(image_dims, image_dims))
