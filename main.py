@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 import random
 import cv2
-import matplotlib.pyplot as plt
 from tensorflow.keras.callbacks import TensorBoard
 import tensorflow as tf
 import tensorflow.keras.backend as K
@@ -77,5 +76,5 @@ def home():
     else:
         return render_template('index.html')
 
-if __name__ == "___main__":
-    app.run()
+if __name__ == "__main__":
+        app.run()
